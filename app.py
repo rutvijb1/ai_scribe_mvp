@@ -1,6 +1,6 @@
 from flask import Flask, request, render_template
-from models.transcribe import transcribe_audio
-from models.generate_soap import generate_soap
+from app.models.transcribe import transcribe_audio
+from app.models.generate_soap import generate_soap
 
 app = Flask(__name__)
 
@@ -22,5 +22,5 @@ def index():
     return render_template("index.html")
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(host="0.0.0.0", port=5000, debug=True)
 
